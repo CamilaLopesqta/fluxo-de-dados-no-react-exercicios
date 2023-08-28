@@ -1,5 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 import ProfileScreen from "./screens/ProfileScreen";
+import { useState } from "react";
+import ProfileMenu from "./components/ProfileMenu/ProfileMenu";
+import React from "react";
+
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -23,12 +27,30 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-function App() {
-  return (
-    <>
-      <GlobalStyle />
+function App(props) {
 
-      <ProfileScreen />
+  const [nome, setNome] = useState("")
+  const [bio, setBio] = useState("")
+  const [imagem, setImagem] = useState("")
+ 
+  
+    return (
+    <>
+      <GlobalStyle 
+      nome={nome}
+      bio={bio}
+      imagem={imagem}
+      setNome={setNome}
+      setBio={setBio}
+      setImagem={setImagem}  />
+
+      <ProfileScreen 
+      nome={nome}
+      bio={bio}
+      imagem={imagem}
+      setNome={setNome}
+      setBio={setBio}
+      setImagem={setImagem}/>
     </>
   );
 }
