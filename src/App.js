@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import ProfileScreen from "./screens/ProfileScreen";
+import React from "react";
 
+//estado global de estilização
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -23,12 +25,14 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+//componente pai
 function App() {
+
   return (
     <>
-      <GlobalStyle />
-
-      <ProfileScreen />
+    <GlobalStyle />
+    {/* recebendo profile screen para renderizar na tela */}
+    <ProfileScreen />
     </>
   );
 }

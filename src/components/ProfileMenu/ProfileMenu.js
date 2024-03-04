@@ -1,11 +1,17 @@
-import { ProfileBio, ProfileImage, ProfileName, ProfileWrapper } from "./ProfileMenu.styled";
-
-const ProfileMenu = () => {
+import {
+  ProfileBio,
+  ProfileImage,
+  ProfileName,
+  ProfileWrapper,
+} from "./ProfileMenu.styled";
+//filho do profile screen
+const ProfileMenu = (props) => {
   return (
     <ProfileWrapper>
-      <ProfileImage src={"https://picsum.photos/200"} alt="Profile Image" />
-      <ProfileName>Astrodev</ProfileName>
-      <ProfileBio>Dev Full Stack</ProfileBio>
+      {/* recebendo props */}
+      <ProfileImage src={props.imagem} alt="Profile Image" />
+      <ProfileName>{props.nome}</ProfileName>
+      <ProfileBio>{props.bio}</ProfileBio>
     </ProfileWrapper>
   );
 };
