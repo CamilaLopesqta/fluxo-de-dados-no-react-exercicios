@@ -1,10 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import ProfileScreen from "./screens/ProfileScreen";
-import { useState } from "react";
-import ProfileMenu from "./components/ProfileMenu/ProfileMenu";
 import React from "react";
 
-
+//estado global de estilização
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -27,30 +25,14 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-function App(props) {
+//componente pai
+function App() {
 
-  const [nome, setNome] = useState("")
-  const [bio, setBio] = useState("")
-  const [imagem, setImagem] = useState("")
- 
-  
-    return (
+  return (
     <>
-      <GlobalStyle 
-      nome={nome}
-      bio={bio}
-      imagem={imagem}
-      setNome={setNome}
-      setBio={setBio}
-      setImagem={setImagem}  />
-
-      <ProfileScreen 
-      nome={nome}
-      bio={bio}
-      imagem={imagem}
-      setNome={setNome}
-      setBio={setBio}
-      setImagem={setImagem}/>
+    <GlobalStyle />
+    {/* recebendo profile screen para renderizar na tela */}
+    <ProfileScreen />
     </>
   );
 }
